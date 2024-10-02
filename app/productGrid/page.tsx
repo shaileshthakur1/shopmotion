@@ -147,9 +147,9 @@ export default function AnimatedProductGrid() {
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl text-gray-500 font-bold">Product Catalog</h1>
+        <h1 className="text-2xl sm:text-3xl text-gray-500 font-bold">Product Catalog</h1>
         <div className="relative">
-          <ShoppingCart className="w-6 h-6 text-gray-500" />
+          <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6 text-gray-500" />
           {cartItems > 0 && (
             <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
               {cartItems}
@@ -184,9 +184,9 @@ export default function AnimatedProductGrid() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src={product.images[0]} alt={product.name} className="flex justify-center w-180% h-48 object-cover" />
+            <img src={product.images[0]} alt={product.name} className="w-200% h-40 sm:h-48 object-cover" />
             <div className="p-4">
-              <h2 className="text-lg font-semibold mb-2">{product.name}</h2>
+              <h2 className="text-base sm:text-lg font-semibold mb-2">{product.name}</h2>
               <p className="text-gray-900">${product.price.toFixed(2)}</p>
             </div>
           </motion.div>
@@ -202,7 +202,7 @@ export default function AnimatedProductGrid() {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white rounded-lg p-6 w-full max-w-3xl relative"
+              className="bg-white rounded-lg p-6 w-full max-w-md sm:max-w-3xl relative"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -218,7 +218,7 @@ export default function AnimatedProductGrid() {
                   <img
                     src={selectedProduct.images[currentImageIndex]}
                     alt={selectedProduct.name}
-                    className="w-full h-64 md:h-96 object-cover rounded-lg"
+                    className="w-full h-40 sm:h-64 md:h-96 object-cover rounded-lg"
                   />
                   <button
                     className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white rounded-full p-1 shadow-md"
@@ -234,19 +234,20 @@ export default function AnimatedProductGrid() {
                   </button>
                 </div>
                 <div className="md:w-1/2 md:pl-6 mt-4 md:mt-0">
-                  <h2 className="text-2xl font-bold mb-4">{selectedProduct.name}</h2>
+                  <h2 className="text-xl sm:text-2xl font-bold mb-4">{selectedProduct.name}</h2>
                   <p className="text-gray-600 text-lg mb-4">${selectedProduct.price.toFixed(2)}</p>
                   <p className="text-gray-700 mb-6 font-bold">
                     Bestsellers, get it now !
                   </p>
                   <button
-                    className="bg-blue-600 text-white px-5 py-1 rounded-md hover:bg-blue-700 transition-colors duration-300"
+                    className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-300"
                     onClick={addToCart}
                   >
                     Add to Cart
                   </button>
                 </div>
               </div>
+
             </motion.div>
           </motion.div>
         )}
