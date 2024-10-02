@@ -62,9 +62,9 @@ const products = [
     name: 'Smartphone', 
     price: 699.99, 
     images: [
-      '/images/products/smartphone1.png', 
-      '/images/products/smartphone2.png', 
       '/images/products/smartphone3.png', 
+      '/images/products/smartphone1.png', 
+      '/images/products/smartphone2.png'
     ] 
   },
   { 
@@ -147,9 +147,9 @@ export default function AnimatedProductGrid() {
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">Product Catalog</h1>
+        <h1 className="text-3xl text-gray-500 font-bold">Product Catalog</h1>
         <div className="relative">
-          <ShoppingCart className="w-6 h-6" />
+          <ShoppingCart className="w-6 h-6 text-gray-500" />
           {cartItems > 0 && (
             <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
               {cartItems}
@@ -184,7 +184,7 @@ export default function AnimatedProductGrid() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img src={product.images[0]} alt={product.name} className="w-full h-48 object-cover" />
+            <img src={product.images[0]} alt={product.name} className="flex justify-center w-180% h-48 object-cover" />
             <div className="p-4">
               <h2 className="text-lg font-semibold mb-2">{product.name}</h2>
               <p className="text-gray-900">${product.price.toFixed(2)}</p>
@@ -236,9 +236,8 @@ export default function AnimatedProductGrid() {
                 <div className="md:w-1/2 md:pl-6 mt-4 md:mt-0">
                   <h2 className="text-2xl font-bold mb-4">{selectedProduct.name}</h2>
                   <p className="text-gray-600 text-lg mb-4">${selectedProduct.price.toFixed(2)}</p>
-                  <p className="text-gray-700 mb-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.
+                  <p className="text-gray-700 mb-6 font-bold">
+                    Bestsellers, get it now !
                   </p>
                   <button
                     className="bg-blue-600 text-white px-5 py-1 rounded-md hover:bg-blue-700 transition-colors duration-300"

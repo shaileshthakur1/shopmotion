@@ -128,7 +128,7 @@ export default function AnimatedLandingPage() {
 
         <section id="features" className="py-20 bg-gray-100">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center text-gray-400 mb-12">Our Features</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-500 mb-12">Our Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-400">
               <FeatureCard
                 icon={ShoppingBag}
@@ -151,7 +151,7 @@ export default function AnimatedLandingPage() {
 
         <section id="products" className="py-20 text-gray-400">
           <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center text-gray-400 mb-12">Our Products</h2>
+            <h2 className="text-3xl font-bold text-center text-gray-500 mb-12">Our Products</h2>
             <AnimatedProductGrid />
           </div>
         </section>
